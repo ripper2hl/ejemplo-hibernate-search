@@ -1,7 +1,6 @@
 package com.perales.ejemplohibernatesearch.service;
 
 import com.perales.ejemplohibernatesearch.entity.Colonia;
-import com.perales.ejemplohibernatesearch.repository.ColoniaRepository;
 import jakarta.persistence.EntityManager;
 import org.hibernate.search.engine.search.query.SearchResult;
 import org.hibernate.search.mapper.orm.Search;
@@ -15,14 +14,7 @@ import java.util.List;
 public class ColoniaService {
 
     @Autowired
-    private ColoniaRepository coloniaRepository;
-
-    @Autowired
     private EntityManager entityManager;
-
-    public Long getCount() {
-        return coloniaRepository.count();
-    }
 
     public boolean index() {
         try{

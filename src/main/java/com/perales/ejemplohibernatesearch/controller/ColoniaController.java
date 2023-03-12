@@ -14,11 +14,6 @@ public class ColoniaController {
     @Autowired
     private ColoniaService coloniaService;
 
-    @GetMapping("/")
-    private Long count(){
-        return coloniaService.getCount();
-    }
-
     @GetMapping("/index")
     private boolean index(){
         return coloniaService.index();

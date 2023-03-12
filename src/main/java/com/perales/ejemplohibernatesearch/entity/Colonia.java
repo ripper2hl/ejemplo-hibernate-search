@@ -2,11 +2,10 @@ package com.perales.ejemplohibernatesearch.entity;
 
 
 import jakarta.persistence.*;
-import java.io.Serializable;
-
-import org.hibernate.search.engine.backend.types.Projectable;
+import org.hibernate.search.mapper.pojo.mapping.definition.annotation.FullTextField;
 import org.hibernate.search.mapper.pojo.mapping.definition.annotation.Indexed;
-import org.hibernate.search.mapper.pojo.mapping.definition.annotation.KeywordField;
+
+import java.io.Serializable;
 @Entity(name = "colonia")
 @Indexed
 public class Colonia  implements Serializable {
@@ -18,7 +17,7 @@ public class Colonia  implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @KeywordField(name = "nombre", projectable = Projectable.YES)
+    @FullTextField
     @Column(name = "nombre", nullable = false)
     private String nombre;
 
